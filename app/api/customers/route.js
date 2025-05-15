@@ -10,15 +10,27 @@ export async function GET() {
 
 export async function POST(req) {
   const { name, customerNumber, phone, email } = await req.json()
-  const customer = await prisma.customer.create({
-    data: {
-      name,
-      customerNumber: parseInt(customerNumber),
-      phone,
-      email: email || null,
-    },
-  })
-  return NextResponse.json(customer)
+
+  try {
+    const customer = await prisma.customer.create({
+      data: {
+        name,
+        customerNumber: parseInt(customerNumber),
+        phone,
+        email: email || null,
+      },
+    })
+    return NextResponse.json(customer)
+  } catch (err) {
+    if (err.code === 'P2002') {
+      return NextResponse.json(
+        { error: 'Kundennummer existiert bereits.' },
+        { status: 400 }
+      )
+    }
+    console.error(err)
+    return NextResponse.json({ error: 'Serverfehler' }, { status: 500 })
+  }
 }
 
 // DELETE via Query-Parameter: /api/customers?id=123
