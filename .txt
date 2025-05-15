@@ -1,0 +1,4 @@
+npx create-next-app@latest
+cd my-reservation-app
+npm install prisma @prisma/client sqlite3
+npx prisma init
