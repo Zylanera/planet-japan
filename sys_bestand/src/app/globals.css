@@ -45,6 +45,8 @@ input[type='number'] {
   border: 1px solid var(--border);
   border-radius: 8px;
   transition: border 0.3s ease, background 0.3s ease;
+  width: 80%;
+  margin-right: 10px;
 }
 
 input[type='text']:focus,

@@ -34,5 +34,32 @@
     "coverUrl": "https://buch.isbn.de/cover/9783743220232.jpg",
     "publishedDate": "15.05.2025",
     "count": 1
+  },
+  {
+    "isbn": "9783963581854",
+    "titleGerman": "NieR:Automata World Guide",
+    "author": "Square Enix",
+    "publisher": "Altraverse GmbH",
+    "coverUrl": "https://buch.isbn.de/cover/9783963581854.jpg",
+    "publishedDate": "22.11.2018",
+    "count": 1
+  },
+  {
+    "isbn": "9783770443185",
+    "titleGerman": "Chainsaw Man Schuber mit Extra",
+    "author": "Tatsuki Fujimoto",
+    "publisher": "Egmont Manga",
+    "coverUrl": "https://buch.isbn.de/cover/9783770443185.jpg",
+    "publishedDate": "11.06.2022",
+    "count": 1
+  },
+  {
+    "isbn": "9783753936772",
+    "titleGerman": "Nezumi – Willst du mit mir morden gehen? 02",
+    "author": "Riku Oseto",
+    "publisher": "Altraverse GmbH",
+    "coverUrl": "https://buch.isbn.de/cover/9783753936772.jpg",
+    "publishedDate": "14.07.2025",
+    "count": 1
   }
 ]

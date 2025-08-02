@@ -1,5 +1,4 @@
 'use client';
-
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -123,7 +122,6 @@ export default function Home() {
         placeholder="ISBN eingeben und Enter drücken"
         className="border p-2 w-full mb-2"
       />
-
       <button
         onClick={handleSubmit}
         disabled={loading}
@@ -146,22 +144,46 @@ export default function Home() {
       {results.length > 0 && (
         <table className="w-full text-left border mt-4">
           <thead>
-            <th className="sortable" onClick={() => handleSort('title')}>
-              Titel
-              {sortField === 'title' && (
-                <span className="sort-indicator">{sortDirection === 'asc' ? '▲' : '▼'}</span>
-              )}
-            </th>
-            
             <tr>
               <th className="border p-2">Cover</th>
-              <th className="border p-2">{renderSortButton('ISBN', 'isbn')}</th>
-              <th className="border p-2">{renderSortButton('Titel', 'titleGerman')}</th>
-              <th className="border p-2">{renderSortButton('Publisher', 'publisher')}</th>
-              <th className="border p-2">{renderSortButton('Autor', 'author')}</th>
-              <th className="border p-2">{renderSortButton('Erschienen', 'publishedDate')}</th>
-              <th className="border p-2">{renderSortButton('Anzahl', 'count')}</th>
+              <th className="border p-2 sortable" onClick={() => handleSort('isbn')}>
+                ISBN{' '}
+                {sortBy === 'isbn' && (
+                  <span className="sort-indicator">{sortOrder === 'asc' ? '▲' : '▼'}</span>
+                )}
+              </th>
+              <th className="border p-2 sortable" onClick={() => handleSort('titleGerman')}>
+                Titel{' '}
+                {sortBy === 'titleGerman' && (
+                  <span className="sort-indicator">{sortOrder === 'asc' ? '▲' : '▼'}</span>
+                )}
+              </th>
+              <th className="border p-2 sortable" onClick={() => handleSort('publisher')}>
+                Publisher{' '}
+                {sortBy === 'publisher' && (
+                  <span className="sort-indicator">{sortOrder === 'asc' ? '▲' : '▼'}</span>
+                )}
+              </th>
+              <th className="border p-2 sortable" onClick={() => handleSort('author')}>
+                Autor{' '}
+                {sortBy === 'author' && (
+                  <span className="sort-indicator">{sortOrder === 'asc' ? '▲' : '▼'}</span>
+                )}
+              </th>
+              <th className="border p-2 sortable" onClick={() => handleSort('publishedDate')}>
+                Erschienen{' '}
+                {sortBy === 'publishedDate' && (
+                  <span className="sort-indicator">{sortOrder === 'asc' ? '▲' : '▼'}</span>
+                )}
+              </th>
+              <th className="border p-2 sortable" onClick={() => handleSort('count')}>
+                Anzahl{' '}
+                {sortBy === 'count' && (
+                  <span className="sort-indicator">{sortOrder === 'asc' ? '▲' : '▼'}</span>
+                )}
+              </th>
             </tr>
+
           </thead>
           <tbody>
             {sortedResults.map((item, idx) => (
@@ -169,7 +191,9 @@ export default function Home() {
                 <td className="border p-2">
                   {item.coverUrl ? (
                     <img src={item.coverUrl} alt="Cover" className="w-16" />
-                  ) : '–'}
+                  ) : (
+                    '–'
+                  )}
                 </td>
                 <td className="border p-2">{item.isbn}</td>
                 <td className="border p-2">{item.titleGerman || '–'}</td>

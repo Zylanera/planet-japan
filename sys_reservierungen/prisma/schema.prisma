@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Customer {
+  id             Int             @id @default(autoincrement())
+  name           String
+  customerNumber Int             @unique
+  phone          String?
+  email          String?         
+  reservations   Reservation[]
+}
+
+
+
+model Reservation {
+  id          Int      @id @default(autoincrement())
+  type        String
+  description String?   
+  createdAt   DateTime @default(now())
+  customer    Customer @relation(fields: [customerId], references: [id])
+  customerId  Int
+}
+
+
+enum ReservationType {
+  MERCH
+  MANGA
+  FIGUR
+  SONSTIGES
+}
