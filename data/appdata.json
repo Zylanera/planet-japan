@@ -1,0 +1,38 @@
+[
+  {
+    "isbn": "9783551622549",
+    "titleGerman": "Secret Life of Corporate Flowers – On & Off 2",
+    "author": "Shinnosuke Kanazawa",
+    "publisher": "Carlsen",
+    "coverUrl": "https://buch.isbn.de/cover/9783551622549.jpg",
+    "publishedDate": "01.07.2025",
+    "count": 1
+  },
+  {
+    "isbn": "9782889519576",
+    "titleGerman": "Studio Cabana – Band 6",
+    "author": "Agri UMA",
+    "publisher": "Crunchyroll Manga",
+    "coverUrl": "https://buch.isbn.de/cover/9782889519576.jpg",
+    "publishedDate": "04.07.2025",
+    "count": 1
+  },
+  {
+    "isbn": "9783743220225",
+    "titleGerman": "Süße Bisse 01",
+    "author": "Julietta Suzuki",
+    "publisher": "Loewe",
+    "coverUrl": "https://buch.isbn.de/cover/9783743220225.jpg",
+    "publishedDate": "13.03.2025",
+    "count": 1
+  },
+  {
+    "isbn": "9783743220232",
+    "titleGerman": "Frühlingssturm und Monster 01",
+    "author": "Miyuki Mitsubachi",
+    "publisher": "Loewe",
+    "coverUrl": "https://buch.isbn.de/cover/9783743220232.jpg",
+    "publishedDate": "15.05.2025",
+    "count": 1
+  }
+]
